@@ -32,11 +32,26 @@ const webpackConfig: webpack.Configuration = {
   },
   plugins: [
     new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
+    new ESLintPlugin({
+      context: srcPath,
+      extensions: 'ts',
+    }),
     new HtmlWebpackPlugin({
       template: path.resolve(publicPath, 'index.html'),
+      favicon: path.resolve(publicPath, 'favicon.ico'),
     }),
     new MiniCssExtractPlugin(),
   ],
+  stats: {
+    assetsSort: '!size',
+    builtAt: false,
+    children: false,
+    entrypoints: false,
+    hash: false,
+    modules: false,
+    timings: false,
+    version: false,
+  },
 };
 
 export default webpackConfig;
