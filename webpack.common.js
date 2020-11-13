@@ -1,5 +1,6 @@
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const ESLintPlugin = require('eslint-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { publicPath, srcPath, distPath } = require('./paths');
@@ -28,6 +29,10 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
+    new ESLintPlugin({
+      context: srcPath,
+      extensions: 'ts',
+    }),
     new HtmlWebpackPlugin({
       template: path.resolve(publicPath, 'index.html'),
       favicon: path.resolve(publicPath, 'favicon.ico'),
