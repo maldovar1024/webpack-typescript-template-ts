@@ -1,8 +1,8 @@
 {
   "license": "MIT",
   "scripts": {
-    "build": "webpack --config webpack.prod.js",
-    "dev": "webpack-dev-server --open --config webpack.dev.js"
+    "build": "cross-env TS_NODE_PROJECT=\"tsconfig.webpack.config.json\" webpack --config webpack.prod.ts",
+    "dev": "cross-env TS_NODE_PROJECT=\"tsconfig.webpack.config.json\" webpack-dev-server --open --config webpack.dev.ts"
   },
   "devDependencies": {
     "@types/html-webpack-plugin": "^3.2.4",
