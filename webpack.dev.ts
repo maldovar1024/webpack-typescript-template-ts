@@ -11,4 +11,7 @@ export default merge(common, {
   output: {
     publicPath: '/',
   },
+  stats: {
+    assets: false,
+  },
 });
