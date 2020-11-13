@@ -1,10 +1,14 @@
-const path = require('path');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const { publicPath, srcPath, distPath } = require('./paths');
+import { CleanWebpackPlugin } from 'clean-webpack-plugin';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import path from 'path';
+import webpack from 'webpack';
 
-module.exports = {
+export const publicPath = path.resolve(__dirname, 'public');
+export const srcPath = path.resolve(__dirname, 'src');
+export const distPath = path.resolve(__dirname, 'dist');
+
+const webpackConfig: webpack.Configuration = {
   entry: path.resolve(srcPath, 'index.ts'),
   output: {
     path: distPath,
@@ -31,6 +35,8 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.resolve(publicPath, 'index.html'),
     }),
-    new MiniCssExtractPlugin()
+    new MiniCssExtractPlugin(),
   ],
 };
+
+export default webpackConfig;
