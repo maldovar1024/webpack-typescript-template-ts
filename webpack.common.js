@@ -37,7 +37,7 @@ module.exports = {
       template: path.resolve(publicPath, 'index.html'),
       favicon: path.resolve(publicPath, 'favicon.ico'),
     }),
-    new MiniCssExtractPlugin()
+    new MiniCssExtractPlugin(),
   ],
   stats: {
     assetsSort: '!size',
