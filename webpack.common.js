@@ -39,4 +39,14 @@ module.exports = {
     }),
     new MiniCssExtractPlugin()
   ],
+  stats: {
+    assetsSort: '!size',
+    builtAt: false,
+    children: false,
+    entrypoints: false,
+    hash: false,
+    modules: false,
+    timings: false,
+    version: false,
+  },
 };

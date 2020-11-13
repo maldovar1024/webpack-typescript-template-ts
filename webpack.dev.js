@@ -12,4 +12,7 @@ module.exports = merge(common, {
   output: {
     publicPath: '/',
   },
+  stats: {
+    assets: false,
+  },
 });
