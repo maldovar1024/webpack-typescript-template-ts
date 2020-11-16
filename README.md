@@ -7,6 +7,6 @@
 目前具有以下特性：
 
 - 使用 Typescript 编写脚本代码
-- 使用 Less 编写样式
+- 使用 Less 和 CSS 编写样式
 - 使用 prettier 和 ESLint 控制 Typescript 代码的格式
-- **不支持** Javascript 文件和 CSS 文件
+- **不支持** Javascript 文件
