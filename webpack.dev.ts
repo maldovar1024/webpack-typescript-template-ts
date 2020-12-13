@@ -7,6 +7,7 @@ export default merge(common, {
   devServer: {
     contentBase: distPath,
     hot: true,
+    open: true,
   },
   output: {
     publicPath: '/',

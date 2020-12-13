@@ -39,7 +39,7 @@ const webpackConfig: webpack.Configuration = {
     new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
     new ESLintPlugin({
       context: srcPath,
-      extensions: 'ts',
+      extensions: ['ts'],
     }),
     new HtmlWebpackPlugin({
       template: path.resolve(publicPath, 'index.html'),
